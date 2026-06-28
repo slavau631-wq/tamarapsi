@@ -1,0 +1,107 @@
+:root {
+  --wa-green: #25d366;
+  --wa-green-dark: #1daa56;
+  --text: #111b21;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  background-color: #efeae2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23d9dbd5' stroke-width='1.2' opacity='0.8'%3E%3Cpath d='M22 24c7 0 12 5 12 12s-5 12-12 12-12-5-12-12 5-12 12-12Z'/%3E%3Cpath d='M78 72c0-7 5-12 12-12s12 5 12 12-5 12-12 12-12-5-12-12Z'/%3E%3Cpath d='M82 18h10M87 13v10'/%3E%3Cpath d='M28 84l6-6 6 6-6 6Z'/%3E%3Cpath d='M8 92c8 0 14 6 14 14'/%3E%3Cpath d='M56 18c8 0 14 6 14 14'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.wa-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.wa-card {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d8d8d8;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-wrap img,
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-wrap img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.avatar-fallback {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #dff7e7 0%, #c1edd0 100%);
+  color: #1b6d3a;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 18px 0 28px;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.wa-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--wa-green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.wa-button:hover {
+  transform: translateY(-1px);
+  background: var(--wa-green-dark);
+}
+
+@media (max-width: 480px) {
+  .avatar-wrap {
+    width: 88px;
+    height: 88px;
+  }
+
+  h1 {
+    margin: 18px 0 24px;
+  }
+
+  .wa-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
