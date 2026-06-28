@@ -6,7 +6,7 @@ const contactConfig = {
   buttonLabel: "Перейти в WhatsApp"
 };
 
-const AUTO_REDIRECT_DELAY_MS = 2500;
+const AUTO_REDIRECT_DELAY_MS = 1000;
 const REDIRECT_AFTER_LEAD_MS = 250;
 
 const profileName = document.getElementById("profileName");
