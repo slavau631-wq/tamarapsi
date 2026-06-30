@@ -6,14 +6,12 @@ const contactConfig = {
   buttonLabel: "Перейти в WhatsApp"
 };
 
-const AUTO_REDIRECT_DELAY_MS = 1000;
 const REDIRECT_AFTER_LEAD_MS = 250;
 
 const profileName = document.getElementById("profileName");
 const ctaButton = document.getElementById("ctaButton");
 const avatarImage = document.getElementById("profileAvatar");
 const avatarFallback = document.getElementById("avatarFallback");
-let hasRedirected = false;
 
 function getInitials(name) {
   const cleanName = name.trim();
@@ -42,11 +40,10 @@ function trackLead() {
 }
 
 function redirectToWhatsApp(targetUrl) {
-  if (!targetUrl || hasRedirected) {
+  if (!targetUrl) {
     return;
   }
 
-  hasRedirected = true;
   trackLead();
 
   window.setTimeout(() => {
@@ -65,10 +62,6 @@ function renderProfile(config) {
   ctaButton.href = buildWhatsAppLink(config.whatsappNumber, config.outgoingMessage);
   avatarFallback.textContent = getInitials(config.name);
   ctaButton.addEventListener("click", handleCtaClick);
-
-  window.setTimeout(() => {
-    redirectToWhatsApp(ctaButton.href);
-  }, AUTO_REDIRECT_DELAY_MS);
 
   if (config.avatarUrl.trim()) {
     avatarImage.src = config.avatarUrl;
