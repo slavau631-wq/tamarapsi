@@ -1,6 +1,6 @@
 const contactConfig = {
   name: "Tamara",
-  whatsappNumber: "380635529161",
+  whatsappNumber: "+380635529161",
   avatarUrl: "./avatar.jpg",
   outgoingMessage: "Здравствуйте! Хочу записаться на расклад Таро.",
   buttonLabel: "Перейти в WhatsApp"
